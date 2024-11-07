@@ -13,6 +13,7 @@
   <url>http://www.example.com</url>
   <modules>
     <module>chapter1</module>
+    <module>chapter2</module>
   </modules>
 
   <properties>

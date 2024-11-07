@@ -1,0 +1,27 @@
+Side-effects:
+int i = 99
+++i => will print 100 while 99++ will print 99 because ++i modify the value before using i.
+Note that ++i++ does not compile.
+Study operands order => z = 100/--x => x is decremented before division.
+
+Add a long with an int will result in a long. However, promoting a long to an int is not allowed for safety except for initialization.
+
+Note:
+final int x = 99;
+byte y = x => ok because x won't change and could fit.
+
+int x = 99;
+byte u = x => fails because x is not final and could be greater than the byte range.
+
+final long g = 99;
+byte a = g => fails because it could not fit
+Downsizing numeric is only valid for int.
+
+Casting will create  a new value that fit th e new type:
+(int) 3.2 will give 3
+Casting can transform a parent type to a sub-type (may lead to ClassCastException at runtime.
+
+Wrappers type provide a "home" for some data and function like Long.MAX_VALUE and a reference type that holds the value.
+
+With primitive types (short, boolean, int) the value of the expression is the actual value reprsented.
+With reference type (List, Arrays, String), the value represents how to find the actual data.
