@@ -1,0 +1,21 @@
+Java 17 support several litterals forms:
+"hello"
+Octal escape for byte size litteral such '\0'
+Backslash escape '\b','\t'
+Unicode escapes '\u7231'
+String are immutable => any trasnformation on a text must create a new text variable
+
+String can be shared since they are immutable. Compiler will find duplicates in code.
+intern() method will put a String into the String pool even if it already exists.
+Text block is processed before use: leading indentation is stripped indents like \r \r\n are replaced with \n.
+
+"""hello""" is not a valid text block.
+
+"""
+    hello
+    """ is correct and
+
+"""
+    hello""" also.
+
+StringBuilder initial capacity can be changed. In this case, empty new slot will be filled with 0;
