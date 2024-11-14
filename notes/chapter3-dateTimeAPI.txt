@@ -1,0 +1,40 @@
+Absolute moment types (machine):
+
+* Instant => point in the timeline in UTC
+
+* ZonedDateTime => now at Brussels for example
+
+Point of human reference (not absolute):
+
+* LocalDate => friday 6th september 1990 somewhere
+
+* LocalTime => 06:08:32 s
+
+* LocalDateTime => friday 6th september 1990 0608:32
+
+Elapsed time:
+
+Duration => in nanosecond => absolute
+
+Period => years,month, days => context dependent
+
+Timezones => by offset, by id
+
+/****/
+
+Almost all types are immutable => operations create a new object, just like String
+
+Most classes have factory or builder methods
+
+/**** Timezones ****/
+A timezone reprensents a moment in the time.
+
+ZoneId includes region informations and rules about change while ZoneOffset is a subtype used for fixed offsets.
+
+Timezone rules describe gaps (clock jumping forward) and overlaps (clock jumping backward)
+
+The API provides conversion between local date and time with a timezone => ZonedDateTime
+Between instant and ZonedDateTime
+Between ZonedDateTime objects at different timezones
+
+Comparing ZoneDateTime objects requires they have the same instant but also the same timezone.
