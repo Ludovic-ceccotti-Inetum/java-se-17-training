@@ -36,4 +36,26 @@ public class TimeZonesTest {
         System.out.println(gap);
         assertEquals(8, gap.toHours());
     }
+
+    @Test
+    void testFlight() {
+        var date = LocalDate.now();
+        var time = LocalTime.of(8,0,0,0);
+        var takeOff = ZonedDateTime.of(date,time,ZoneId.of("America/New_York"));
+        var arrival = takeOff.plus(Duration.ofHours(8)).withZoneSameInstant(ZoneId.of("Europe/Madrid"));
+        System.out.println(arrival);
+        assertEquals(22,arrival.getHour());
+    }
+
+    @Test
+    public void testFlightZoneDayChange() {
+        var tokyo = ZoneId.of("Asia/Tokyo");
+        var hawai = ZoneId.of("Pacific/Honolulu");
+        final LocalTime takeOffTime = LocalTime.of(8,0,0,0);
+        final ZonedDateTime takeOff = ZonedDateTime.of(LocalDate.now(),takeOffTime,tokyo);
+        var arrival = takeOff.plusHours(8).withZoneSameInstant(hawai).toLocalDateTime();
+        System.out.println(arrival);
+        assertEquals(takeOff.getDayOfMonth() -1,arrival.getDayOfMonth());
+
+    }
 }
