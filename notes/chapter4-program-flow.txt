@@ -1,0 +1,38 @@
+While and for loops can be executed 0 time. do-while is always executed at least once.
+
+For loop can have multiple items declared with commas. Updates can also be comma-separated statements.
+All three parts can be omitted.
+
+break keyword will do a jump out of a loop or a switch statement.
+Continue can only be used in a loop and will move to the next iteration. While and do-while will restart at the test.
+
+Java allows label to be applied to a block or a loop:
+
+blockOne : {}
+blockOne : {} => ok to have two labels in a row beacause a label only applies to the block/loop it refers to
+
+blockOne: {
+    blockOne: {} => does not compile because a block with same label is defined in another block with the same label.
+}
+
+continue and break statement applie.s to the loop referred by the label
+a break into a labeled block is a "goto" to the end of the labeled block
+
+Value for case statement in a switch block must be:
+
+* unique
+* constant expression
+* must be assignement compatible with the switch type.
+* must not be null
+* are matched using == expression
+* switch value must be an enum type, a int, a String
+* must not be null (NPE thrown if true)
+* can be labelled
+
+Arrow switch cannot be mixed with classic case switch declaration.
+Arrow switch support block of code to handle multiple operations case 100 -> {....}
+Variables created into this block are bound to this block. Break are allowed in block too and block code exceution in the block.
+
+A switch expression must map all possible input values to a result value or throw an exception. In case of the value is an enum,
+java compiler won't need default case if all possible enum values are present in case statements. Break expression is not authorized
+in case of switch expression because it would not return a value

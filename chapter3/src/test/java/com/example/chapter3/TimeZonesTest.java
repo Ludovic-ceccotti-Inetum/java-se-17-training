@@ -55,6 +55,8 @@ public class TimeZonesTest {
         final ZonedDateTime takeOff = ZonedDateTime.of(LocalDate.now(),takeOffTime,tokyo);
         var arrival = takeOff.plusHours(8).withZoneSameInstant(hawai).toLocalDateTime();
         System.out.println(arrival);
+        var greeting ="bonjour enchanté le français";
+        System.out.println(greeting);
         assertEquals(takeOff.getDayOfMonth() -1,arrival.getDayOfMonth());
 
     }
