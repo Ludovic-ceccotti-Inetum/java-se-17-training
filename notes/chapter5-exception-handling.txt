@@ -1,0 +1,17 @@
+it is impossible to catch an exception that won't be thrown by the try block.
+If an exception run without a suitable catch block, it can reach a finally block but the exception is still active and should be enclosed by anoter try block.
+Declaring a method with an exception that won't be actually thrown is legal.
+
+Compiler does not care abut unchecked exceptions so declaring a runtimeException on a method is still valid.
+throwing an unchecked exception without declaring it is valid. Also, declaring a broader exception than the one thrown is valid:
+
+void sql() throws Exception { throw new SqlException(); }
+
+Resources in a try-with-resource must be effectively final. Types in multi-catch must not have a parent/child relationship.
+
+A a resource used in a try-with-resource must implements AutoCloseable interface and implements a close() void method which throws exception.
+If a resource launches an exception duri,g closing, other resources are closed anyway. Resources are closed in reverse order of their listing.
+A previously declared resource can be named in the resource block, this value will be closed too if it is effectively final.
+
+If exception arises in the close() method, it arise after one in the try block. The firt stored exception become the primary exception and all other exceptions
+are suppressed exceptions.
