@@ -1,0 +1,50 @@
+
+List<E> le, lf = null, List<String> ls; => fails because ls is a different type: add ";" after null
+A final variable must be initialized explicitely.
+An uninitialized non-static variable compile if it is not read.
+var keyword is not permitted for fields types.
+
+Parameters in a method signature can be marked as final so they cannot be modified.
+Exception that can be thrown can be repeated in method declaration. A parent exception can also be declared.
+
+static methods cannot reference this. They can however access an instance field.
+Invoked with context defining the containing class.
+
+This keyword can be passed as method argument if its passed first and if it is the same type as the enclosing class.
+This is effectively final although object fields can be mutated.
+
+The JVM, for security reasons, does not permit an unspecified number of arguments to a method call.
+
+The sipliest solution is to pass an array. The number of arguments is known by the array, preventing any memory corruption by
+modifying arguments size.
+
+Overloading methods cannot differ solely by their returns types.
+Overloading can occur with a method from the parent class.
+
+Overload resolution follows an order:
+
+1) A perfect match of arguments type and counts always wins
+* Widening promotions may be applied
+* Look for the nearest/shortest promotion
+* Ambiguity causes compilation failure
+
+2) unboxing/autboxing may be tried
+* Will not change basic type
+* Ambiguity causes compilation failure
+3) Varargs may be tried
+
+Overriding is having two instance methods with same signature. In case of static methods, it is called hiding.
+If a method is marked as final, it cannot be overriden or hidden. The sublcass method becomes a substitute for the parent method.
+Note: declaring an unchecked exception in an overriden method is valid.
+Default access-level (with no keyword) is less accessible than protected.
+
+A record groups related values into a single container. It does not have setter methods and equals and hashcode are based on content.
+A record cannot extends a class but it can implements interfaces. Member record is implicitely static.
+Members are implicitely private and final. Accessors have no arguments and are public.
+
+Records automatic methods can be replaced as for equals, hashcode and toString as long as they conform to expected signature.
+It can have static initilaizers.
+
+A compact constructor can be provided for data validation. It rolls over the automatic canonical constructor.
+It must not initialize the storage. A handcoded canonical constructor can be created but it has to initialize all the members and cannot coexist
+with a compact constructor. call to super keyword is prohibited.

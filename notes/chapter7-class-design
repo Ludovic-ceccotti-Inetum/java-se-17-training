@@ -1,0 +1,19 @@
+Records are implicitely final. public modifier cannot bue used with local and anonymous classes.
+Protected and private can only be used on member class. An abstract class cannot be final. A sealed class must declare its children it permits.
+A non-sealed type must have a sealed parent type. Local types cannot be sealed or non-sealed.
+A java file cannot contains more than one public class. static enum as a class member is implicetly static.
+
+An interface member is implicitely public, static and final.
+
+A sealed class imposes three important constraints on its permitted subclasses:
+*   All permitted subclasses must belong to the same module as the sealed class.
+*   Every permitted subclass must explicitly extend the sealed class.
+*   Every permitted subclass must define a modifier: final, sealed, or non-sealed.
+
+To instantiate an inner static class: new Outer.Inner().
+
+private accessibility means that the member is available all between the curly braces in class declaration.
+
+Java allows class declaration in a method block without access modifier. behaves as instance or static depending of the method.
+Local enums or interfaces are not allowed.
+
